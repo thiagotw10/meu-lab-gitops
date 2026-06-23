@@ -1,0 +1,15 @@
+http:
+  namespace: default
+  port: 8080
+
+image:
+  repository: httpd:alpine # Usando outra imagem leve para diferenciar os labs
+
+resources:
+  replicas: 1
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 200m
+    memory: 256Mi

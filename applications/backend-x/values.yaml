@@ -1,0 +1,15 @@
+http:
+  namespace: default
+  port: 3000
+
+image:
+  repository: nginx:alpine # Usando nginx apenas para o pod subir com sucesso no lab local
+
+resources:
+  replicas: 2
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 200m
+    memory: 256Mi
