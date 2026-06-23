@@ -3,7 +3,7 @@ http:
   port: 8000 # Porta padrão onde o Python/FastAPI costuma rodar
 
 image:
-  repository: python:3.11-alpine # Imagem leve do Python apenas para o pod subir no lab
+  repository: traefik/whoami # Imagem leve do Python apenas para o pod subir no lab
 
 resources:
   replicas: 1
