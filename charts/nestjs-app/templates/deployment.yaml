@@ -18,6 +18,8 @@ spec:
         image: {{ .Values.image.repository }}
         ports:
         - containerPort: {{ .Values.http.port | default 3000 }}
+        env:
+          {{- toYaml .Values.env | nindent 12 }}
         resources:
           requests:
             cpu: {{ .Values.resources.requests.cpu }}

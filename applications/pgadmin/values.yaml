@@ -5,6 +5,10 @@ http:
 image:
   repository: dpage/pgadmin4 # Imagem REAL e oficial do PgAdmin
 
+env:
+  - PGADMIN_DEFAULT_EMAIL: "thiago@teste.com"
+  - PGADMIN_DEFAULT_PASSWORD: "Thiago07#*""
+
 resources:
   replicas: 1
   requests:
