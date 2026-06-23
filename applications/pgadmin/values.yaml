@@ -1,0 +1,15 @@
+http:
+  namespace: default
+  port: 80 # O PgAdmin roda nativamente na porta 80 por padrão
+
+image:
+  repository: dpage/pgadmin4 # Imagem REAL e oficial do PgAdmin
+
+resources:
+  replicas: 1
+  requests:
+    cpu: 100m
+    memory: 128Mi
+  limits:
+    cpu: 200m
+    memory: 256Mi
