@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/thiagotw10/meu-lab-gitops.git'
+    targetRevision: HEAD
+    path: argocd-apps # <-- O pulo do gato: ele monitora a própria pasta de apps!
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: argocd # Instala os apps dentro do namespace do argo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

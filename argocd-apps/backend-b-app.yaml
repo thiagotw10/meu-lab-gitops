@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: backend-b
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/thiagotw10/meu-lab-gitops.git'
+    targetRevision: HEAD
+    path: charts/nestjs-app
+    helm:
+      valueFiles:
+        - ../../applications/backend-b/values.yaml
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
