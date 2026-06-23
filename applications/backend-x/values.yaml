@@ -6,7 +6,7 @@ image:
   repository: nginx:alpine # Usando nginx apenas para o pod subir com sucesso no lab local
 
 resources:
-  replicas: 2
+  replicas: 3
   requests:
     cpu: 100m
     memory: 128Mi
