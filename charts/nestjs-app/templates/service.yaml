@@ -4,8 +4,6 @@ metadata:
   name: {{ .Release.Name }}-svc
   namespace: {{ .Values.http.namespace | default "default" }}
 spec:
-  ports:
-  - port: 80
-    targetPort: {{ .Values.http.port | default 3000 }}
+  type: {{ .Values.http.serviceType | default "ClusterIP" }} # <-- Deixa dinâmico! Se não passar nada, assume ClusterIP
   selector:
     app: {{ .Release.Name }}

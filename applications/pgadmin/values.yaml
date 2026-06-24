@@ -1,6 +1,8 @@
 http:
   namespace: default
   port: 80 # O PgAdmin roda nativamente na porta 80 por padrão
+  serviceType: LoadBalancer # <-- A MÁGICA ESTÁ AQUI!
+  host: pgadmin.local
 
 image:
   repository: dpage/pgadmin4 # Imagem REAL e oficial do PgAdmin
