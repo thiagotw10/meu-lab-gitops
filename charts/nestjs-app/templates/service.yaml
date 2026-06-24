@@ -2,8 +2,12 @@ apiVersion: v1
 kind: Service
 metadata:
   name: {{ .Release.Name }}-svc
-  namespace: {{ .Values.http.namespace | default "default" }}
+  namespace: {{ .Values.http.namespace }}
 spec:
-  type: {{ .Values.http.serviceType | default "ClusterIP" }} # <-- Deixa dinâmico! Se não passar nada, assume ClusterIP
+  type: {{ .Values.http.serviceType | default "ClusterIP" }}
   selector:
     app: {{ .Release.Name }}
+  ports:
+    - protocol: TCP
+      port: {{ .Values.http.port }}
+      targetPort: {{ .Values.http.port }}
