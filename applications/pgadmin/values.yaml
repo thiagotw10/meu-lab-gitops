@@ -7,7 +7,7 @@ image:
 
 env:
   - PGADMIN_DEFAULT_EMAIL: "thiago@teste.com"
-  - PGADMIN_DEFAULT_PASSWORD: "Thiago07#*""
+  - PGADMIN_DEFAULT_PASSWORD: "Thiago07#*"
 
 resources:
   replicas: 1
